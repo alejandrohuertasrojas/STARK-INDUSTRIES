@@ -34,5 +34,13 @@ public class EmpresaService {
         return false;
     }
 
-  //Metodo delete pendiente
+    //Metodo para eliminar empresas registradas teniendo el id
+        public boolean deleteEmpresa(Integer id){
+        empreasaRepository.deleteById(id);
+        if (getEmpresaById(id)!=null){
+            return false;
+        }
+        return true;
+    }
+
 }
